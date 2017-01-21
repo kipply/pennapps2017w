@@ -35,7 +35,7 @@ def splitIntoSentences(text):
     sentences = sentences[:-1]
     sentences = [s.strip() for s in sentences]
     return sentences
-for i in range(1,10):
+for i in range(1, 20):
 	connection = urlopen('https://www.fictionpress.com/fiction/Romance/?&srt=4&lan=1&r=10&p='+str(i))
 
 	dom =  lxml.html.fromstring(connection.read())
@@ -43,7 +43,7 @@ for i in range(1,10):
 	links = []
 	for link in dom.xpath('//a/@href'):
 		if link.startswith("/s/") and link[11] == "1" and link[12] == "/":
-			links.append("https://www.fictionpress.com" + link)
+			links. append("https://www.fictionpress.com" + link)
 
 	beginning = open("beginning.txt", "a")
 	middle = open("middle.txt", "a")
