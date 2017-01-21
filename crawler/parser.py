@@ -11,6 +11,3 @@ def rip_content(raw_file):
 
   strip = lambda s: unescape(re.sub('</?[^\>]+>', '', s))
   return "\n".join([strip(line) for line in strings])
-
-test = open(input("> ")[0:-1]).read()
-print(rip_content(test))
