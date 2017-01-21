@@ -90,3 +90,4 @@ ENV/
 
 # OSX hate you
 .DS_Store
+node_modules/*
