@@ -9,5 +9,5 @@ counter = 0
 with open("teen-fic.txt", "w+") as output:
 	for link in link_list:
 		counter += 1
-		print(counter+"/"+len(link_list))
+		print(str(counter) + "/" + str(len(link_list)))
 		f.write(urlopen(Request(link, headers={'User-Agent': 'H4X0R/6.6.6'})).read())
