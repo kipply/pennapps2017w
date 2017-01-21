@@ -1,5 +1,6 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, BooleanField
+from wtforms.fields import StringField
+from wtforms.widgets import TextArea
                                                                                                                                         
 class CreateBook(FlaskForm):
-  vent = StringField('vent')
+  vent = StringField('vent', widget=TextArea())
