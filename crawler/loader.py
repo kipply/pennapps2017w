@@ -2,7 +2,7 @@
 
 from urllib.request import Request, urlopen
 
-id_list = open(input("ids.txt")[0:-1]).read()[0:-1].split(",")
+id_list = open("ids.txt").read()[0:-1].split(",")
 link_list = ["https://www.wattpad.com/" + c_id for c_id in id_list]
 
 counter = 0
