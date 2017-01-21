@@ -31,3 +31,4 @@ def writePDF():
   fileName = "app/books/" + time.strftime("%d-%m-%Y_%X_") + ''.join([random.choice(string.ascii_letters + string.digits) for n in range(9)]) + ".pdf"
   
   pdf.output(fileName, "F")
+  return fileName
