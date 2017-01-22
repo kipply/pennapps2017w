@@ -1,3 +1,6 @@
 [submodule "char-rnn-tensorflow"]
 	path = char-rnn-tensorflow
 	url = https://github.com/jacksarick/char-rnn-tensorflow.git
+[submodule "word-rnn-tensorflow"]
+	path = word-rnn-tensorflow
+	url = https://github.com/jacksarick/word-rnn-tensorflow.git
