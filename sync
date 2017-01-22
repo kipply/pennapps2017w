@@ -1,0 +1,4 @@
+#!/bin/bash
+cd ${0%/*}
+git add . && git commit -m "Save $(date)" && git push
+ssh server@alphabetsoup.me 'cd ~/pennapps2017w; git pull'
