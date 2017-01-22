@@ -212,27 +212,6 @@ p {
     
 <body id="page-top">
     
-    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top fadein">
-        <div class="navbar-inner">
-                <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-content" >
-                            <i class="fa fa-bars fa-1x" aria-hidden="true"></i>
-                        </button>
-                </div>
-
-                <div class="collapse navbar-collapse" id="nav-content">
-                    <ul class="nav navbar-nav">
-                        <li>
-                            <a class="page-scroll" href="#home">Home</a>
-                        </li>
-                        <li>
-                            <a class="page-scroll" href="#about">WOW!</a>
-                        </li>
-                    </ul>
-                </div>
-        </div>
-    </nav>
-
     <section class="panels container-fluid" id="home">
         <div class="jumbotron jumbotron-fluid wow fadeIn vertical-center"><div class = "container">
             <h2 class="section-heading">Chicken Soup for Your Soul</h2>
@@ -266,6 +245,70 @@ p {
                 }
         );
         wow.init();
+        (function ($) {
+
+    $(window).load(function(){
+
+
+        var $container = $('.portfolioContainer'),
+            $body = $('body'),
+            colW = 375,
+            columns = null;
+
+    });
+    "use strict"; // Start of use strict
+
+    //to smooth scroll and keep track of location
+    $(function () {
+        // Add smooth scrolling to all links
+        $("a").on('click', function (event) {
+            if (this.hash !== "") {
+                // Prevent default anchor click behavior
+                event.preventDefault();
+                // Store hash
+                var hash = this.hash;
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 500,
+                    function () {
+                    // ADD HASH
+                        window.location.hash = hash;
+                    });
+            } // End if
+        });
+
+    });
+
+    // Scrollspy
+    $('body').scrollspy({
+        target: '.navbar-fixed-top',
+        offset: 51
+    });
+
+    // Offset for Main Navigation
+    $('#mainNav').affix({
+        offset: {
+            top: 100
+        }
+    });
+
+    // Closes the Responsive Menu on Menu Item Click
+    $('.navbar-collapse ul li a').click(function () {
+        $('.navbar-toggle:visible').click();
+    });
+
+    //Closes responsive menu when something else is clicked
+    $(document).click(function (event) {
+        var clickover = $(event.target),
+            $navbar = $(".navbar-collapse"),
+            opened = $navbar.hasClass("in");
+        if (opened === true && !clickover.hasClass("navbar-toggle")) {
+            $navbar.collapse('hide');
+        }
+
+    });
+
+})(jQuery); // End of use
     </script>
 
 </footer>
