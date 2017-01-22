@@ -23,12 +23,12 @@ def findStuff(message):
     prompts.append(bigPrompt) 
 
   stories = []
-  if len(prompts) > 4: 
+  if len(prompts) > 2: 
     for prompt in prompts: 
       stories.append(generate(prompt))
       print(stories)
   else: 
-    while len(prompts) < 4: 
+    while len(prompts) < 2: 
       prompts = prompts * 2
 
     for prompt in prompts: 

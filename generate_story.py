@@ -64,4 +64,4 @@ def generate(context):
 
     print("generating end")
     story += optimal(context, partition(context, dname + "/model/end/"))
-    return story
+    return re.sub(r'[^a-zA-Z0-9\.\?\!\'\"\, ]', '', story)
