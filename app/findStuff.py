@@ -3,7 +3,6 @@ import requests
 import json 
 
 def findStuff(message): 
-  url = "http://api.meaningcloud.com/topics-2.0?key=4e9d9d2ab61341074dd513e4422aa47e&of=json&lang=en&ilang=en&txt=" + message
 
   results = requests.get("http://api.meaningcloud.com/topics-2.0", 
               params={'key': '4e9d9d2ab61341074dd513e4422aa47e', 'of': 'json', 'lang': 'en', 'ilang': 'en', 'txt': message, 'tt': 'a'})

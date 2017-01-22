@@ -33,9 +33,11 @@ def splitIntoSentences(text):
     text = text.replace("<prd>",".")
     sentences = text.split("<stop>")
     sentences = sentences[:-1]
-    sentences = [s.strip() for s in sentences]
+    sentences
+    [s.strip() for s in sentences]
     return sentences
-for i in range(1, 20):
+for i in range(1, 10):
+	print(str(i) + "/90")
 	connection = urlopen('https://www.fictionpress.com/fiction/Romance/?&srt=4&lan=1&r=10&p='+str(i))
 
 	dom =  lxml.html.fromstring(connection.read())
@@ -50,7 +52,7 @@ for i in range(1, 20):
 	end = open("end.txt", "a")
 
 	for link in links: 
-		html = urlopen(links[0]).read()
+		html = urlopen(link).read()
 		soup = BeautifulSoup(html, "lxml")
 		story = soup.find("div", {"id":"storytext"})
 		story = str(story).replace("</p><p>", "\n")
