@@ -2,9 +2,9 @@ from .writePDF import writePDF
 import requests
 import json 
 import sys
-sys.path.append( './app/word-rnn-tensorflow' )
-from generate_story import *
-
+sys.path.append( './word-rnn-tensorflow' )
+from generate_story import generate
+  
 def findStuff(message): 
 
   results = requests.get("http://api.meaningcloud.com/topics-2.0", 
@@ -35,6 +35,7 @@ def findStuff(message):
     for prompt in prompts: 
       print(stories)
       stories.append(generate(prompt))
+  print(generate("horse"))
 
   fileName = writePDF(stories)
   print(fileName)

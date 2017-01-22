@@ -21,4 +21,5 @@ def generate(context):
 
     print("generating end")
     story += optimal(context, partition(context, "model/end"))
+    print(story)
     return story
